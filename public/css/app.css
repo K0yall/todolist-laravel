@@ -1,0 +1,227 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+nav {
+    background-color: #1f1f1f;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px #111;
+}
+
+nav a {
+    color: #aaa;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4caf50;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #222;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #4caf50;
+    text-align: center;
+}
+
+form.filter-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+form.filter-form input[type="text"],
+form.filter-form select {
+    background-color: #333;
+    border: none;
+    color: #eee;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 200px;
+    transition: background-color 0.3s ease;
+}
+
+form.filter-form input[type="text"]:focus,
+form.filter-form select:focus {
+    background-color: #444;
+    outline: none;
+}
+
+form.filter-form button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+form.filter-form button:hover {
+    background-color: #43a047;
+}
+
+a.new-task-btn {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    background-color: #4caf50;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.new-task-btn:hover {
+    background-color: #388e3c;
+    box-shadow: 0 6px 12px rgba(56, 142, 60, 0.5);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #000;
+}
+
+thead tr {
+    background-color: #333;
+    color: #4caf50;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #444;
+    text-align: left;
+    font-size: 1rem;
+}
+
+tbody tr:hover {
+    background-color: #2a2a2a;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions a,
+.actions form button {
+    margin-right: 0.5rem;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.actions a:hover {
+    background-color: #43a047;
+}
+
+.actions form button {
+    background-color: #e53935;
+}
+
+.actions form button:hover {
+    background-color: #c62828;
+}
+
+.no-tasks {
+    text-align: center;
+    padding: 2rem 0;
+    color: #bbb;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.pagination {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination li a,
+.pagination li span {
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.pagination li.active span {
+    background-color: #4caf50;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    form.filter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form.filter-form input[type="text"],
+    form.filter-form select {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    th, td {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
