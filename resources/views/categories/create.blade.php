@@ -3,17 +3,44 @@
 @section('title', 'Criar Categoria')
 
 @section('content')
-    <h1>Criar Nova Categoria</h1>
+<div class="page-header">
+    <h1 class="page-title">
+        <i class="fas fa-plus"></i>
+        Criar Nova Categoria
+    </h1>
+</div>
 
-    <form action="{{ route('categories.store') }}" method="POST">
+<div class="form-card">
+    <form method="POST" action="{{ route('categories.store') }}" class="category-form">
         @csrf
+        
+        <div class="form-group">
+            <label for="name" class="form-label">
+                <i class="fas fa-folder"></i>
+                Nome da Categoria *
+            </label>
+            <input type="text" 
+                   id="name" 
+                   name="name" 
+                   value="{{ old('name') }}" 
+                   class="form-input @error('name') error @enderror"
+                   placeholder="Digite o nome da categoria"
+                   required>
+            @error('name')
+                <span class="form-error">{{ $message }}</span>
+            @enderror
+        </div>
 
-        <label for="name">Nome da Categoria:</label><br>
-        <input type="text" name="name" id="name" required><br>
-
-        <button type="submit">Salvar</button>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i>
+                Salvar Categoria
+            </button>
+            <a href="{{ route('categories.index') }}" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </a>
+        </div>
     </form>
-
-    <br>
-    <a href="{{ route('categories.index') }}">← Voltar para lista de categorias</a>
+</div>
 @endsection

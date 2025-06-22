@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->boolean('completed')->default(false);
+            $table->enum('priority', ['baixa', 'media', 'alta'])->default('media')->after('description');
+            $table->date('due_date')->nullable()->after('priority');
+            $table->string('image')->nullable()->after('due_date');
         });
     }
 
@@ -22,7 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('completed');
+            $table->dropColumn(['priority', 'due_date', 'image']);
         });
     }
 };
